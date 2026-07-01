@@ -6,7 +6,7 @@ public class BankAccount{
     public BankAccount(String name, double balance, String Accno){
         this.name = name;
         this.balance = balance;
-        this.Accno = account;
+        this.Accno = Accno;
     }
 
     public void deposit(double amount){
@@ -25,7 +25,20 @@ public class BankAccount{
         }
     }
     public double getBalance(){
+        System.out.println("Account no. :" + Accno);
         return this.balance;
     }
+
+    public static void main(String[] args){
+        BankAccount myAccount = new BankAccount("Alice",1000.0,"ACC123");
+        myAccount.deposit(1000);
+        System.out.println(myAccount.getBalance());
+        myAccount.withdraw(500);
+        myAccount.withdraw(6000);
+        System.out.println(myAccount.getBalance());
+    }
+
 } 
+
+
 
