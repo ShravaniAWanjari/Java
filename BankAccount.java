@@ -1,6 +1,6 @@
-public class BankAccount{
+public class BankAccount implements Asset{
     private String name;
-    private double balance;
+    protected double balance;
     private String Accno;
 
     public BankAccount(String name, double balance, String Accno){
@@ -38,20 +38,14 @@ public class BankAccount{
         System.out.println(myAccount.getBalance());
     }
 
+    @Override
+    public double getValue(){
+        return getBalance();
+    }
+
 } 
 
-public class SavingsAccount extends BankAccount{
-    private double interestRate;
 
-    public SavingsAccount(String name, double balance, String Accno, double interestRate){
-        super(name, balance, Accno);
-        this.interestRate = interestRate;
-    }
-
-    public void applyInterest(){
-        
-    }
-}
 
 
 
