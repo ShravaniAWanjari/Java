@@ -16,4 +16,21 @@ public class  CryptoWallet implements Asset{
         return bitcoinCount * bitcoinPrice;
     }
 
+    public boolean withdrawCrypto(double amount) throws InsufficientFundsException{
+        if(amount > getValue()){
+            throw new InsufficientFundsException("withdraw failed: insufficient funds");
+        }
+
+        bitcoinCount -= amount;
+        return true;
+    }
+
 }
+
+public class InsufficientFundsException extends Exception{
+    public InsufficientFundsException(String message){
+        super(message);
+    }
+}
+
+
