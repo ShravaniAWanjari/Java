@@ -1,6 +1,6 @@
 import java.util.HashMap;
 
-public class Solution {
+public class longestSubstring {
     public int lengthOfLongestSubstring(String s) {
         HashMap<Character, Integer> freq = new HashMap<>();
         int left = 0;
