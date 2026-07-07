@@ -1,10 +1,12 @@
-public class  CryptoWallet implements Asset{
+package Java;
+
+public class CryptoWallet implements Asset {
     private String coinName;
     private final String walletAddress;
     private double bitcoinCount;
     private static double bitcoinPrice;
 
-    public  CryptoWallet(String coinName, String walletAddress, double bitcoinCount,double bitcoinPrice){
+    public CryptoWallet(String coinName, String walletAddress, double bitcoinCount, double bitcoinPrice) {
         this.coinName = coinName;
         this.walletAddress = walletAddress;
         this.bitcoinCount = bitcoinCount;
@@ -12,12 +14,12 @@ public class  CryptoWallet implements Asset{
     }
 
     @Override
-    public double getValue(){
+    public double getValue() {
         return bitcoinCount * bitcoinPrice;
     }
 
-    public boolean withdrawCrypto(double amount) throws InsufficientFundsException{
-        if(amount > getValue()){
+    public boolean withdrawCrypto(double amount) throws InsufficientFundsException {
+        if (amount > getValue()) {
             throw new InsufficientFundsException("withdraw failed: insufficient funds");
         }
 
@@ -27,10 +29,8 @@ public class  CryptoWallet implements Asset{
 
 }
 
-public class InsufficientFundsException extends Exception{
-    public InsufficientFundsException(String message){
+public class InsufficientFundsException extends Exception {
+    public InsufficientFundsException(String message) {
         super(message);
     }
 }
-
-
