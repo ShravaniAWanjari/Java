@@ -46,4 +46,8 @@ public class BankAccount implements Asset {
         return getBalance();
     }
 
+    public interface Asset {
+        double getValue();
+    }
+
 }
