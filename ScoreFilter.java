@@ -10,14 +10,15 @@ public class ScoreFilter {
                 System.out.println(name);
             }
         }
+
     }
 
     public static void main(String[] args) {
-        Map<String, Integer> scores = Map.of(
-                "Amit", 70,
-                "Ravi", 75,
-                "Neha", 85);
+        Map<String, Integer> studentlist = Map.of(
+                "Rohit", 70,
+                "neha", 80,
+                "Nisha", 50);
 
-        printPassed(scores);
+        printPassed(studentlist);
     }
 }
