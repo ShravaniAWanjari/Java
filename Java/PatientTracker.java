@@ -1,3 +1,5 @@
+package Java;
+
 import java.io.BufferedReader;
 import java.io.StringReader;
 import java.io.IOException;
