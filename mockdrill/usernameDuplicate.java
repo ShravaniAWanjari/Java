@@ -1,3 +1,5 @@
+package mockdrill;
+
 import java.util.*;
 
 class usernameDuplicate {
@@ -9,7 +11,7 @@ class usernameDuplicate {
     }
 
     public List<String> getUniqueUsers() {
-        Set<String> setUsers = new HashSet<>(users);
+        Set<String> setUsers = new LinkedHashSet<>(users);
 
         return new ArrayList<>(setUsers);
     }
